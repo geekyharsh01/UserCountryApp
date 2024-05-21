@@ -33,3 +33,8 @@ Follow these steps to set up and run the project on your local machine.
 ```bash
 git clone https://github.com/your-username/user-country-app.git
 cd user-country-app
+```
+
+Open the UserCountryApp solution in the Microsoft Visual Studio 2022 and then run the project.
+Go to User/Create  to access create page where you can fill the details.
+and User/  to acccess all the names in the form of list. 
