@@ -1,0 +1,41 @@
+﻿@model UserCountryApp.Models.User
+
+@{
+    // Set the title of the view to "Create User"
+    ViewData["Title"] = "Create User";
+}
+
+<!-- Heading for the Create User page -->
+<h1>Create User</h1>
+
+<!-- Form for creating a new user, posting to the Create action -->
+<form asp-action="Create" method="post">
+    <!-- Form group for the Name field -->
+    <div class="form-group">
+        <!-- Label for the Name field, using data annotations from the model -->
+        <label asp-for="Name" class="control-label"></label>
+        <!-- Input field for the Name property, with Bootstrap form-control styling -->
+        <input asp-for="Name" class="form-control" />
+        <!-- Validation message for the Name field, displayed if there are validation errors -->
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <!-- Form group for the Country field -->
+    <div class="form-group">
+        <!-- Label for the Country field, using data annotations from the model -->
+        <label asp-for="Country" class="control-label"></label>
+        <!-- Input field for the Country property, with Bootstrap form-control styling -->
+        <input asp-for="Country" class="form-control" />
+        <!-- Validation message for the Country field, displayed if there are validation errors -->
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <!-- Submit button to create the user, styled with Bootstrap's primary button class -->
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<!-- Section for including validation scripts, necessary for client-side validation -->
+@section Scripts {
+    <!-- Partial view to include validation scripts -->
+    <partial name="_ValidationScriptsPartial" />
+}

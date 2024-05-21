@@ -1,0 +1,24 @@
+﻿@model IEnumerable<UserCountryApp.Models.User>
+
+@{
+    // Set the title of the view to "User List"
+    ViewData["Title"] = "User List";
+}
+
+<!-- Heading for the User List page -->
+<h1>User List</h1>
+
+<!-- Unordered list to display the users -->
+<ul>
+    @foreach (var user in Model)
+    {
+        <!-- List item for each user -->
+        <li>
+            <!-- Link to the Details action for each user, passing the user's ID as a route parameter -->
+            <a asp-action="Details" asp-route-id="@user.Id">@user.Name</a>
+        </li>
+    }
+</ul>
+
+<!-- Button to navigate to the Create action to add a new user, styled with Bootstrap's primary button class -->
+<a asp-action="Create" class="btn btn-primary">Add New User</a>
